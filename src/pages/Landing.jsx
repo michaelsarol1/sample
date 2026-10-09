@@ -59,7 +59,7 @@ export default function Landing() {
 
           <div className="row">
             <button className="btn gold" onClick={enterDemo}>Enter {role} workspace</button>
-            <Link to={`/register?role=${role}`} className="btn ghost" style={{ textDecoration: 'none' }}>Register new account</Link>
+            <Link to="/register" className="btn ghost" style={{ textDecoration: 'none' }}>Register vendor account</Link>
           </div>
           <p className="muted tiny" style={{ marginTop: 18 }}>
             Demo bypasses approval. Real registrations stay PENDING until a supervisor verifies ID and credentials.

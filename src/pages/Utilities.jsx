@@ -121,36 +121,36 @@ export function CollectorUtilities() {
   )
 }
 
-export function VendorUtilities() {
+export function VendorUtilities({ stallId = 'A-04', vendorName = 'You' }) {
   const { meters, setMeters, setReceipts, ping } = useApp()
-  const meter = meters.find((m) => m.stall === 'A-04')
+  const meter = meters.find((m) => m.stall === stallId) || meters[0]
   const ch = meterCharges(meter)
   const pay = (kind, mode) => {
     if (kind === 'water' && meter.waterPaid) return ping('Water is already paid for October')
     if (kind === 'power' && meter.powerPaid) return ping('Electricity is already paid for October')
     const amount = kind === 'water' ? ch.waterBill : ch.powerBill
-    setMeters((all) => all.map((m) => m.stall === 'A-04' ? { ...m, [kind === 'water' ? 'waterPaid' : 'powerPaid']: true } : m))
-    setReceipts((r) => [{ or: `eOR-${89100 + Math.floor(Math.random() * 80)}`, date: '2026-10-09', amount, mode, stall: 'A-04', period: `October 2026 ${kind}` }, ...r])
+    setMeters((all) => all.map((m) => m.stall === stallId ? { ...m, [kind === 'water' ? 'waterPaid' : 'powerPaid']: true } : m))
+    setReceipts((r) => [{ or: `eOR-${89100 + Math.floor(Math.random() * 80)}`, date: '2026-10-09', amount, mode, stall: stallId, period: `October 2026 ${kind}` }, ...r])
     ping(`${mode} ₱${amount.toLocaleString()} posted for October ${kind}.`)
   }
   return (
     <div className="grid cols-2">
       <div className="card">
-        <h2>Water · {meter.waterId}</h2>
-        <p>{meter.waterPrev} → {meter.waterCurr} m³ · {ch.waterM3} m³ × ₱{WATER_RATE}</p>
+        <h2>Water · {meter?.waterId || `W-${stallId}`}</h2>
+        <p>{meter?.waterPrev || 0} → {meter?.waterCurr || 0} m³ · {ch.waterM3} m³ × ₱{WATER_RATE}</p>
         <p className="display" style={{ fontSize: 36 }}>₱{ch.waterBill.toLocaleString()}</p>
-        <span className={`badge ${meter.waterPaid ? 'paid' : 'unpaid'}`}>{meter.waterPaid ? 'PAID' : 'UNPAID'}</span>
+        <span className={`badge ${meter?.waterPaid ? 'paid' : 'unpaid'}`}>{meter?.waterPaid ? 'PAID' : 'UNPAID'}</span>
         <div className="row" style={{ marginTop: 12 }}>
-          <button className="btn gold" disabled={meter.waterPaid} onClick={() => pay('water', 'GCash')}>Pay water</button>
+          <button className="btn gold" disabled={meter?.waterPaid} onClick={() => pay('water', 'GCash')}>Pay water</button>
         </div>
       </div>
       <div className="card">
-        <h2>Electricity · {meter.powerId}</h2>
-        <p>{meter.powerPrev} → {meter.powerCurr} kWh · {ch.powerKwh} kWh × ₱{POWER_RATE}</p>
+        <h2>Electricity · {meter?.powerId || `E-${stallId}`}</h2>
+        <p>{meter?.powerPrev || 0} → {meter?.powerCurr || 0} kWh · {ch.powerKwh} kWh × ₱{POWER_RATE}</p>
         <p className="display" style={{ fontSize: 36 }}>₱{ch.powerBill.toLocaleString()}</p>
-        <span className={`badge ${meter.powerPaid ? 'paid' : 'unpaid'}`}>{meter.powerPaid ? 'PAID' : 'UNPAID'}</span>
+        <span className={`badge ${meter?.powerPaid ? 'paid' : 'unpaid'}`}>{meter?.powerPaid ? 'PAID' : 'UNPAID'}</span>
         <div className="row" style={{ marginTop: 12 }}>
-          <button className="btn primary" disabled={meter.powerPaid} onClick={() => pay('power', 'Maya')}>Pay electricity</button>
+          <button className="btn primary" disabled={meter?.powerPaid} onClick={() => pay('power', 'Maya')}>Pay electricity</button>
         </div>
       </div>
     </div>

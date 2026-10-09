@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor Â· Utility meters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="mark">M</div><div>Supervisor desk<small>Bayanihan Public Market</small></div></a>
+    <div class="top-meta"><span class="chip">Atty. Elena Ramos</span><a class="btn gold" href="index.html">Sign out</a></div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a href="supervisor.html"><strong>1. Stall &amp; Section</strong><span>Interactive map and pricing</span></a>
+      <a href="supervisor-onboarding.html"><strong>2. Vendor Onboarding</strong><span>Approve applications &amp; docs</span></a>
+      <a href="supervisor-leases.html"><strong>3. Lease Lifecycle</strong><span>Create, renew, terminate</span></a>
+      <a href="supervisor-reports.html"><strong>4. Financial &amp; Audit</strong><span>Ledgers, zones, collector logs</span></a>
+      <a href="supervisor-enforcement.html"><strong>5. Enforcement</strong><span>Delinquency, notices, lockouts</span></a>
+      <a class="active" href="supervisor-utilities.html"><strong>6. Utility meters</strong><span>Water &amp; electricity billing</span></a>
+      <a href="supervisor-notices.html"><strong>7. Penalty notices</strong><span>Violation notice generator</span></a>
+    </nav>
+    <main class="main">
+      <div class="kpis">
+        <div class="kpi"><div class="label">Water rate</div><div class="value">â‚±45</div><div class="tiny muted">per mÂ³</div></div>
+        <div class="kpi"><div class="label">Power rate</div><div class="value">â‚±12.50</div><div class="tiny muted">per kWh</div></div>
+        <div class="kpi warn"><div class="label">Stalls with unpaid utilities</div><div class="value">5</div></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Meter roll Â· October 2026</h2>
+          <p class="muted tiny">Previous reading is last monthâ€™s close. Current reading posts this monthâ€™s consumption.</p>
+          <a class="btn" href="supervisor-utilities.html">A-01 Â· Rosa Dela Cruz Â· â‚±2,807 Â· SETTLED</a>
+          <a class="btn ghost full" href="supervisor-utilities.html">A-02 Â· Jun Santos Â· â‚±3,566 Â· OPEN</a>
+          <a class="btn ghost full" href="supervisor-utilities.html">A-04 Â· Rosa Dela Cruz Â· â‚±2,676 Â· OPEN</a>
+          <a class="btn ghost full" href="supervisor-utilities.html">A-06 Â· Ben Cruz Â· â‚±1,861 Â· OPEN</a>
+          <a class="btn ghost full" href="supervisor-utilities.html">B-02 Â· Carlo Uy Â· â‚±3,193 Â· OPEN</a>
+          <a class="btn ghost full" href="supervisor-utilities.html">C-01 Â· Aling Nena Â· â‚±7,217 Â· OPEN</a>
+        </div>
+        <div class="card">
+          <h2>A-04 meters</h2>
+          <p class="tiny muted">Water W-A04 Â· Power E-A04</p>
+          <div class="grid cols-2" style="margin-top:12px">
+            <label>Water current (mÂ³)
+              <input type="number" value="141.2" />
+              <span class="tiny muted">Previous 128.4 Â· Use 12.8 mÂ³ Â· â‚±576</span>
+            </label>
+            <label>Power current (kWh)
+              <input type="number" value="4688" />
+              <span class="tiny muted">Previous 4520 Â· Use 168 kWh Â· â‚±2,100</span>
+            </label>
+          </div>
+          <div class="meter-bar" style="margin-top:16px"><div class="fill water"></div></div>
+          <p class="tiny">Water use this month</p>
+          <div class="meter-bar"><div class="fill power"></div></div>
+          <p class="tiny">Power use this month</p>
+          <p class="display" style="font-size:28px;margin:12px 0">Bill â‚±2,676</p>
+          <a class="btn" href="supervisor-utilities.html">Post readings &amp; generate bill</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+

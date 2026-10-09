@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Merkado — Palengke Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-static.css" />
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">M</span>
+    <div><strong style="font-family:Fraunces,serif;font-size:18px">Merkado</strong><small>Palengke OS · v24.10</small></div>
+  </a>
+  <div class="top-meta">
+    <span class="chip">Fri · Oct 09, 2026</span>
+    <span class="chip">32 stalls · 25 occupied</span>
+    <a href="register.html" class="btn gold" style="text-decoration:none">Sign in</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-card">
+    <div class="row space" style="margin-bottom:14px;gap:20px">
+      <div>
+        <span class="badge active">Live Demo</span>
+        <h1 class="display" style="font-size:44px;margin-top:10px">Merkado — Public Market Platform</h1>
+        <p class="muted" style="font-size:17px;max-width:640px">
+          One digital palengke for vendors, collectors, and market supervisors. Monthly rent, water bills, and electricity — tracked and settled online.
+        </p>
+      </div>
+      <div class="kpis" style="grid-template-columns:repeat(3,1fr);min-width:420px;margin:0">
+        <div class="kpi"><div class="label">Stalls</div><div class="value">32</div><div class="tiny muted">8 vacant · 2 maintenance</div></div>
+        <div class="kpi"><div class="label">This Month</div><div class="value">₱120,450</div><div class="tiny muted">78% billed · collected</div></div>
+        <div class="kpi warn"><div class="label">Unpaid</div><div class="value">₱33,750</div><div class="tiny muted">5 vendors · 2 delinquent</div></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px">Enter as</h2>
+    <div class="role-pick">
+      <a href="vendor.html" class="role">
+        <h3>Vendor</h3>
+        <p>View ledger, pay bills, utilities, read contract & market notices.</p>
+        <div class="price">Demo: A-01 Rosa Dela Cruz</div>
+      </a>
+      <a href="collector.html" class="role">
+        <h3>Collector</h3>
+        <p>POS collections, receipt printer, utilities matrix, daily remittance.</p>
+        <div class="price">Demo: M. Reyes · Collector</div>
+      </a>
+      <a href="supervisor.html" class="role">
+        <h3>Supervisor</h3>
+        <p>Stall map, vendor onboarding, utilities, enforcement, reports.</p>
+        <div class="price">Demo: Market Admin</div>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3 style="margin-bottom:10px">Billing (Monthly)</h3>
+        <div class="ledger-row"><div><div class="lbl">Monthly Rent</div><div class="sub">Per stall (A-01..A-10)</div></div><div class="amt">₱4,500</div></div>
+        <div class="ledger-row"><div><div class="lbl">Water Bill</div><div class="sub">Consumption × ₱45 / m³</div></div><div class="amt">per meter</div></div>
+        <div class="ledger-row"><div><div class="lbl">Electricity</div><div class="sub">Consumption × ₱12 / kWh</div></div><div class="amt">per meter</div></div>
+        <div class="ledger-row grand"><div>TOTAL (per stall)</div><div class="amt">sum of above</div></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px">Payments Accepted</h3>
+        <div class="stack">
+          <div class="pm"><div><div class="name">Bank Transfer</div><div class="hint">BDO, BPI, Landbank</div></div><strong class="badge paid">Online</strong></div>
+          <div class="pm"><div><div class="name">GCash</div><div class="hint">Merchant QR</div></div><strong class="badge paid">e-Wallet</strong></div>
+          <div class="pm"><div><div class="name">Maya</div><div class="hint">Merchant QR</div></div><strong class="badge paid">e-Wallet</strong></div>
+          <div class="pm"><div><div class="name">Collector Cash</div><div class="hint">On-site POS</div></div><strong class="badge reserved">In person</strong></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px">Latest Notices</h3>
+        <div class="stack">
+          <div><strong style="color:var(--forest-2)">October Billing Released</strong><div class="tiny muted">Oct 1 · Water & electricity readings uploaded</div></div>
+          <div class="divider" style="margin:4px 0"></div>
+          <div><strong style="color:var(--clay)">Disconnection Notice — A-04</strong><div class="tiny muted">Water unpaid as of Oct 9</div></div>
+          <div class="divider" style="margin:4px 0"></div>
+          <div><strong style="color:var(--forest-2)">Repair: A-07 & B-04</strong><div class="tiny muted">Plumbing works until Oct 12</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

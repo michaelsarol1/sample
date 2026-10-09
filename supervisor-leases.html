@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor · Leases</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="mark">M</div><div>Supervisor desk<small>Bayanihan Public Market</small></div></a>
+    <div class="top-meta"><span class="chip">Atty. Elena Ramos</span><a class="btn gold" href="index.html">Sign out</a></div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a href="supervisor.html"><strong>1. Stall &amp; Section</strong><span>Interactive map and pricing</span></a>
+      <a href="supervisor-onboarding.html"><strong>2. Vendor Onboarding</strong><span>Approve applications &amp; docs</span></a>
+      <a class="active" href="supervisor-leases.html"><strong>3. Lease Lifecycle</strong><span>Create, renew, terminate</span></a>
+      <a href="supervisor-reports.html"><strong>4. Financial &amp; Audit</strong><span>Ledgers, zones, collector logs</span></a>
+      <a href="supervisor-enforcement.html"><strong>5. Enforcement</strong><span>Delinquency, notices, lockouts</span></a>
+      <a href="supervisor-utilities.html"><strong>6. Utility meters</strong><span>Water &amp; electricity billing</span></a>
+      <a href="supervisor-notices.html"><strong>7. Penalty notices</strong><span>Violation notice generator</span></a>
+    </nav>
+    <main class="main">
+      <div class="row" style="margin-bottom:14px">
+        <a class="btn" href="supervisor-leases.html">Create</a>
+        <a class="btn ghost" href="supervisor-leases.html">Renew</a>
+        <a class="btn ghost" href="supervisor-leases.html">Terminate</a>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Create lease</h2>
+          <form class="form" action="supervisor-leases.html">
+            <label>Vendor name<input name="vendor" /></label>
+            <label>Vacant stall
+              <select><option>A-05</option><option>B-03</option><option>C-04</option></select>
+            </label>
+            <label>Start<input type="date" value="2026-10-09" /></label>
+            <label>End<input type="date" value="2027-10-08" /></label>
+            <button class="btn" type="submit">Issue contract</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2>Active contracts</h2>
+          <table>
+            <thead><tr><th>ID</th><th>Vendor</th><th>Stall</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>L-221</td><td>Rosa Dela Cruz</td><td>A-01</td><td><span class="badge active">ACTIVE</span></td></tr>
+              <tr><td>L-218</td><td>Jun Santos</td><td>A-02</td><td><span class="badge unpaid">EXPIRING</span></td></tr>
+              <tr><td>L-190</td><td>Carlo Uy</td><td>B-02</td><td><span class="badge delinquent">DELINQUENT</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h2>Lease termination</h2>
+        <div class="steps">
+          <span class="step on">Trigger</span>
+          <span class="step on">Ledger review</span>
+          <span class="step on">Arrears</span>
+          <span class="step on">Inspection</span>
+          <span class="step">Clearance</span>
+        </div>
+        <form class="form" action="supervisor-leases.html">
+          <label>Termination trigger
+            <select>
+              <option>Voluntary</option>
+              <option>Expiration</option>
+              <option>Delinquency / Violation</option>
+            </select>
+          </label>
+          <label>Lease
+            <select>
+              <option>L-218 · Jun Santos · ₱4,500 arrears</option>
+              <option>L-221 · Rosa Dela Cruz · ₱0 arrears</option>
+              <option>L-190 · Carlo Uy · ₱12,000 arrears</option>
+            </select>
+          </label>
+          <p class="badge delinquent">Unpaid balance ₱4,500. Issue final notice / deduct from security deposit before clearance.</p>
+          <label style="font-weight:450"><span><input type="checkbox" /> Final stall inspection completed</span></label>
+          <label style="font-weight:450"><span><input type="checkbox" /> Stall damaged — assess repair charges</span></label>
+          <button class="btn clay" type="submit">Generate clearance &amp; terminate</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

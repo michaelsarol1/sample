@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merkado â€” Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <div class="mark">M</div>
+      <div>Merkado<small>Registration</small></div>
+    </a>
+  </header>
+  <div class="hero" style="max-width:720px">
+    <div class="hero-card">
+      <h1>Create an account</h1>
+      <p class="muted">Status starts as PENDING. A market supervisor reviews ID and credentials before login is enabled.</p>
+      <form class="form" action="pending.html" method="get" style="margin-top:18px">
+        <label>Role
+          <select name="role">
+            <option>Vendor</option>
+            <option>Collector</option>
+            <option>Supervisor</option>
+          </select>
+        </label>
+        <label>Full name
+          <input name="name" placeholder="Juan Dela Cruz" required />
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="you@email.com" required />
+        </label>
+        <label>Mobile
+          <input name="phone" placeholder="09XXXXXXXXX" required />
+        </label>
+        <label>Preferred stall
+          <select name="stall">
+            <option>A-05</option>
+            <option>B-03</option>
+            <option>C-04</option>
+          </select>
+        </label>
+        <label>ID / credential type
+          <select name="idtype">
+            <option>National ID</option>
+            <option>Driverâ€™s License</option>
+            <option>Employee ID</option>
+            <option>NBI Clearance</option>
+          </select>
+        </label>
+        <div class="upload">
+          <strong>Upload ID / credentials</strong>
+          <p class="muted tiny">JPG or PDF, max 5 MB. Used only for supervisor verification.</p>
+          <input type="file" />
+        </div>
+        <button class="btn" type="submit">Submit application</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

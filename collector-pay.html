@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collector · Payment modes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="mark">M</div><div>Collector field kit<small>Paolo Villar</small></div></a>
+    <div class="top-meta"><a class="btn gold" href="index.html">Sign out</a></div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a href="collector.html"><strong>1. Quick Collection POS</strong><span>Scan QR, tap stall, search</span></a>
+      <a class="active" href="collector-pay.html"><strong>2. Payment modes</strong><span>Cash, GCash, Maya</span></a>
+      <a href="collector-receipt.html"><strong>3. Thermal receipt</strong><span>Bluetooth e-OR print</span></a>
+      <a href="collector-matrix.html"><strong>4. Stall status matrix</strong><span>Paid / unpaid grid</span></a>
+      <a href="collector-remit.html"><strong>5. End-of-day remittance</strong><span>Turnover to treasurer</span></a>
+      <a href="collector-utilities.html"><strong>6. Collect utilities</strong><span>Water and power bills</span></a>
+    </nav>
+    <main class="main">
+      <div class="field-shell">
+        <div class="card">
+          <h2>How the vendor is paying</h2>
+          <div class="row">
+            <a class="btn ghost" href="collector-pay.html">Cash</a>
+            <a class="btn" href="collector-pay.html">GCash</a>
+            <a class="btn ghost" href="collector-pay.html">Maya</a>
+          </div>
+          <div class="upload" style="margin-top:16px;text-align:center">
+            <div class="display" style="font-size:28px">QR · GCash</div>
+            <p class="muted">Vendor scans the stall QR or the collector QR. Settlement posts when the wallet callback succeeds.</p>
+            <div style="width:140px;height:140px;margin:12px auto;background:#14241c"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

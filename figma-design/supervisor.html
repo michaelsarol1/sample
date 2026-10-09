@@ -1,0 +1,136 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor Â· Live market map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <div class="mark">M</div>
+      <div>Supervisor desk<small>Bayanihan Public Market</small></div>
+    </a>
+    <div class="top-meta">
+      <span class="chip">October collections â‚±145,200</span>
+      <span class="chip">Atty. Elena Ramos</span>
+      <a class="btn gold" href="index.html">Sign out</a>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a class="active" href="supervisor.html"><strong>1. Stall &amp; Section</strong><span>Color-coded live floor plan</span></a>
+      <a href="supervisor-onboarding.html"><strong>2. Vendor Onboarding</strong><span>Approve applications &amp; docs</span></a>
+      <a href="supervisor-leases.html"><strong>3. Lease Lifecycle</strong><span>Create, renew, terminate</span></a>
+      <a href="supervisor-reports.html"><strong>4. Financial &amp; Audit</strong><span>Ledgers, zones, collector logs</span></a>
+      <a href="supervisor-enforcement.html"><strong>5. Enforcement</strong><span>Delinquency, notices, lockouts</span></a>
+      <a href="supervisor-utilities.html"><strong>6. Utility meters</strong><span>Water &amp; electricity billing</span></a>
+      <a href="supervisor-notices.html"><strong>7. Penalty notices</strong><span>Violation notice generator</span></a>
+    </nav>
+    <main class="main">
+      <div class="kpis kpis-4">
+        <div class="kpi"><div class="label">October collections</div><div class="value">â‚±145,200</div></div>
+        <div class="kpi"><div class="label">Occupancy</div><div class="value">61%</div></div>
+        <div class="kpi"><div class="label">Vacant stalls</div><div class="value">8</div></div>
+        <div class="kpi warn"><div class="label">Unpaid this month</div><div class="value">4</div></div>
+      </div>
+      <div class="card map-card">
+        <div class="row space" style="margin-bottom:12px">
+          <div>
+            <h2>Live market floor plan</h2>
+            <p class="muted tiny">Bayanihan Public Market Â· Quezon City. Every stall is a block, colored by status. Click a stall for details.</p>
+          </div>
+          <div class="legend">
+            <span><i class="dot vacant"></i> Vacant 8</span>
+            <span><i class="dot occupied"></i> Occupied 22</span>
+            <span><i class="dot reserved"></i> Reserved 4</span>
+            <span><i class="dot maintenance"></i> Maintenance 4</span>
+          </div>
+        </div>
+        <div class="floor-wrap">
+          <div class="floor">
+            <section class="zone wet">
+              <h3>Wet Market</h3>
+              <p>Fish, poultry, pork, beef</p>
+              <div class="zone-stalls">
+                <div class="s occupied selected"><b>A-01</b><span>Fish</span></div>
+                <div class="s occupied"><b>A-02</b><span>Fish</span></div>
+                <div class="s occupied"><b>A-03</b><span>Pork</span></div>
+                <div class="s occupied"><b>A-04</b><span>Fish</span></div>
+                <div class="s reserved"><b>A-05</b><span>Poultry</span></div>
+                <div class="s occupied"><b>A-06</b><span>Beef</span></div>
+                <div class="s maintenance"><b>A-07</b><span>Pork</span></div>
+                <div class="s occupied"><b>A-08</b><span>Fish</span></div>
+                <div class="s vacant"><b>A-09</b><span>Poultry</span></div>
+                <div class="s occupied"><b>A-10</b><span>Beef</span></div>
+                <div class="s vacant"><b>A-11</b><span>Fish</span></div>
+                <div class="s reserved"><b>A-12</b><span>Pork</span></div>
+              </div>
+            </section>
+            <section class="zone produce">
+              <h3>Produce</h3>
+              <p>Fruits and vegetables</p>
+              <div class="zone-stalls">
+                <div class="s occupied"><b>P-01</b><span>Vegetables</span></div>
+                <div class="s occupied"><b>P-02</b><span>Fruits</span></div>
+                <div class="s vacant"><b>P-03</b><span>Vegetables</span></div>
+                <div class="s occupied"><b>P-04</b><span>Fruits</span></div>
+                <div class="s reserved"><b>P-05</b><span>Vegetables</span></div>
+                <div class="s maintenance"><b>P-06</b><span>Fruits</span></div>
+                <div class="s vacant"><b>P-07</b><span>Vegetables</span></div>
+                <div class="s occupied"><b>P-08</b><span>Fruits</span></div>
+              </div>
+            </section>
+            <section class="zone dry">
+              <h3>Dry Goods</h3>
+              <p>Clothes, footwear, household wares</p>
+              <div class="zone-stalls">
+                <div class="s occupied"><b>B-01</b><span>Clothes</span></div>
+                <div class="s occupied"><b>B-02</b><span>Housewares</span></div>
+                <div class="s vacant"><b>B-03</b><span>Clothes</span></div>
+                <div class="s occupied"><b>B-04</b><span>Footwear</span></div>
+                <div class="s reserved"><b>B-05</b><span>Housewares</span></div>
+                <div class="s occupied"><b>B-06</b><span>Clothes</span></div>
+                <div class="s vacant"><b>B-07</b><span>Footwear</span></div>
+                <div class="s maintenance"><b>B-08</b><span>Housewares</span></div>
+                <div class="s occupied"><b>B-09</b><span>Clothes</span></div>
+                <div class="s vacant"><b>B-10</b><span>Footwear</span></div>
+              </div>
+            </section>
+            <section class="zone food">
+              <h3>Eatery / Food Court</h3>
+              <p>Cooked food and refreshment stalls</p>
+              <div class="zone-stalls">
+                <div class="s occupied"><b>C-01</b><span>Carinderia</span></div>
+                <div class="s occupied"><b>C-02</b><span>Carinderia</span></div>
+                <div class="s occupied"><b>C-03</b><span>Drinks</span></div>
+                <div class="s vacant"><b>C-04</b><span>Snacks</span></div>
+                <div class="s reserved"><b>C-05</b><span>Carinderia</span></div>
+                <div class="s maintenance"><b>C-06</b><span>Drinks</span></div>
+                <div class="s occupied"><b>C-07</b><span>Snacks</span></div>
+                <div class="s vacant"><b>C-08</b><span>Carinderia</span></div>
+              </div>
+            </section>
+          </div>
+          <aside class="stall-panel">
+            <p class="tiny" style="letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px">Wet Market Â· Occupied</p>
+            <h3 style="margin:0 0 8px">Stall A-01</h3>
+            <p><strong>Trade:</strong> Fish<br /><strong>Dimensions:</strong> 3m Ã— 2m<br /><strong>Monthly rent:</strong> â‚±4,500<br /><strong>Daily rate:</strong> â‚±150</p>
+            <p><strong>Vendor:</strong> Rosa Dela Cruz<br /><strong>Contract:</strong> 2026-01-15 â†’ 2026-12-31<br /><strong>Payment status:</strong> <span class="badge paid">PAID this month</span></p>
+            <div class="row" style="margin-top:10px">
+              <a class="btn ghost" href="supervisor-leases.html">View lease</a>
+              <a class="btn clay" href="supervisor-notices.html">Issue Notice</a>
+              <a class="btn ghost" href="supervisor.html">Mark for Maintenance</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+

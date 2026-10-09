@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor Â· Penalty notices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="mark">M</div><div>Supervisor desk<small>Bayanihan Public Market</small></div></a>
+    <div class="top-meta"><span class="chip">Atty. Elena Ramos</span><a class="btn gold" href="index.html">Sign out</a></div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a href="supervisor.html"><strong>1. Stall &amp; Section</strong><span>Interactive map and pricing</span></a>
+      <a href="supervisor-onboarding.html"><strong>2. Vendor Onboarding</strong><span>Approve applications &amp; docs</span></a>
+      <a href="supervisor-leases.html"><strong>3. Lease Lifecycle</strong><span>Create, renew, terminate</span></a>
+      <a href="supervisor-reports.html"><strong>4. Financial &amp; Audit</strong><span>Ledgers, zones, collector logs</span></a>
+      <a href="supervisor-enforcement.html"><strong>5. Enforcement</strong><span>Delinquency, notices, lockouts</span></a>
+      <a href="supervisor-utilities.html"><strong>6. Utility meters</strong><span>Water &amp; electricity billing</span></a>
+      <a class="active" href="supervisor-notices.html"><strong>7. Penalty notices</strong><span>Violation notice generator</span></a>
+    </nav>
+    <main class="main">
+      <div class="kpis">
+        <div class="kpi"><div class="label">Open notices</div><div class="value" id="kpi-open">2</div></div>
+        <div class="kpi"><div class="label">Fines outstanding</div><div class="value" id="kpi-fines">â‚±2,000</div></div>
+        <div class="kpi warn"><div class="label">Settled this month</div><div class="value" id="kpi-settled">1</div></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Generate notice</h2>
+          <p class="muted">Pick stall, ordinance, and facts. The sheet on the right is the official penalty notice.</p>
+          <form class="form" action="supervisor-notices.html" style="margin-top:12px">
+            <label>Stall / vendor
+              <select id="stall-vendor">
+                <option>A-04 Â· Rosa Dela Cruz</option>
+                <option>A-02 Â· Jun Santos</option>
+                <option>B-02 Â· Carlo Uy</option>
+              </select>
+            </label>
+            <label>Violation
+              <select>
+                <option>Aisle obstruction</option>
+                <option>Unsanitary stall</option>
+                <option>Illegal subletting</option>
+                <option>Unpaid monthly rent</option>
+                <option>Unpaid utilities</option>
+                <option>Meter tampering</option>
+                <option>Unauthorized cooking</option>
+                <option>After-hours operation</option>
+              </select>
+            </label>
+            <p class="tiny muted">Market Code Art. 12 Â§4 Â· Standard fine â‚±1,500</p>
+            <label>Facts / particulars
+              <textarea rows="4">Merchandise or equipment extends beyond stall frontage and blocks the required fire aisle.</textarea>
+            </label>
+            <label>Penalty (â‚±)<input type="number" value="1500" /></label>
+            <label>Pay by<input type="date" value="2026-10-16" /></label>
+            <button class="btn clay" type="submit">Issue notice</button>
+          </form>
+          <h2 style="margin-top:22px">Issued notices</h2>
+          <a class="btn full" href="supervisor-notices.html">VN-041 Â· B-02 Â· Aisle obstruction Â· â‚±1,500 Â· ISSUED</a>
+          <a class="btn ghost full" href="supervisor-notices.html">VN-038 Â· A-02 Â· Unpaid utilities Â· â‚±500 Â· ISSUED</a>
+          <a class="btn ghost full" href="supervisor-notices.html">VN-029 Â· A-04 Â· Unsanitary stall Â· â‚±1,000 Â· SETTLED</a>
+        </div>
+        <div class="card notice-sheet">
+          <p class="tiny" style="letter-spacing:.12em;text-transform:uppercase;text-align:center">Republic of the Philippines Â· Quezon City</p>
+          <h2 style="text-align:center;margin-bottom:4px">Bayanihan Public Market</h2>
+          <p style="text-align:center;margin-top:0"><strong>Notice of Violation and Penalty</strong></p>
+          <p class="row space"><span>No. VN-041</span><span>Date issued: 2026-10-09</span></p>
+          <hr />
+          <p><strong>Vendor:</strong> Carlo Uy<br /><strong>Stall:</strong> B-02<br /><strong>Offense:</strong> Aisle obstruction<br /><strong>Ordinance:</strong> Market Code Art. 12 Â§4</p>
+          <p><strong>Particulars:</strong><br />Merchandise displayed beyond the stall frontage, blocking the 1.5m fire aisle.</p>
+          <p><strong>Penalty:</strong> â‚±1,500.00 &nbsp; <strong>Pay on or before:</strong> 2026-10-16</p>
+          <p class="tiny muted">Failure to settle may result in stall lockout, deduction from security deposit, and lease termination under Art. 18.</p>
+          <p style="margin-top:28px">_________________________<br /><span class="tiny">Market Supervisor</span></p>
+          <span class="badge delinquent">ISSUED</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>
+
+

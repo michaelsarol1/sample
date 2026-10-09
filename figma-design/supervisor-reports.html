@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor Â· Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Outfit:wght@380;450;550;650&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="mark">M</div><div>Supervisor desk<small>Bayanihan Public Market</small></div></a>
+    <div class="top-meta"><span class="chip">Atty. Elena Ramos</span><a class="btn gold" href="index.html">Sign out</a></div>
+  </header>
+  <div class="layout">
+    <nav class="nav">
+      <a href="supervisor.html"><strong>1. Stall &amp; Section</strong><span>Interactive map and pricing</span></a>
+      <a href="supervisor-onboarding.html"><strong>2. Vendor Onboarding</strong><span>Approve applications &amp; docs</span></a>
+      <a href="supervisor-leases.html"><strong>3. Lease Lifecycle</strong><span>Create, renew, terminate</span></a>
+      <a class="active" href="supervisor-reports.html"><strong>4. Financial &amp; Audit</strong><span>Ledgers, zones, collector logs</span></a>
+      <a href="supervisor-enforcement.html"><strong>5. Enforcement</strong><span>Delinquency, notices, lockouts</span></a>
+      <a href="supervisor-utilities.html"><strong>6. Utility meters</strong><span>Water &amp; electricity billing</span></a>
+      <a href="supervisor-notices.html"><strong>7. Penalty notices</strong><span>Violation notice generator</span></a>
+    </nav>
+    <main class="main">
+      <div class="kpis">
+        <div class="kpi"><div class="label">October collections</div><div class="value">â‚±145,200</div></div>
+        <div class="kpi"><div class="label">Occupancy rate</div><div class="value">75%</div></div>
+        <div class="kpi warn"><div class="label">Unpaid this month</div><div class="value">4</div></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>October ledger by zone</h2>
+          <table>
+            <thead><tr><th>Zone</th><th>Collector</th><th>Cash</th><th>e-Wallet</th></tr></thead>
+            <tbody>
+              <tr><td>Wet Market A</td><td>Paolo Villar</td><td>â‚±62,400</td><td>â‚±18,100</td></tr>
+              <tr><td>Dry Goods B</td><td>Mina Lopez</td><td>â‚±31,200</td><td>â‚±9,800</td></tr>
+              <tr><td>Food Court C</td><td>Paolo Villar</td><td>â‚±18,800</td><td>â‚±4,900</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h2>Collector logs</h2>
+          <p>Paolo Villar Â· Wet Market A Â· 8 monthly receipts Â· remittance pending â‚±18,000</p>
+          <p>Mina Lopez Â· Dry Goods B Â· 5 monthly receipts Â· remitted â‚±31,200 at 16:10</p>
+          <p class="tiny muted">Audit trail is append-only. Voided ORs require supervisor PIN in production.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+

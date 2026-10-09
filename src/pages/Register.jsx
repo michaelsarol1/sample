@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../store.jsx'
 
 export default function Register() {
-  const [params] = useSearchParams()
   const nav = useNavigate()
   const { setSession, setApps, ping } = useApp()
   const [form, setForm] = useState({
-    role: params.get('role') || 'Vendor',
+    role: 'Vendor',
     name: '',
     email: '',
     phone: '',
     idType: 'National ID',
-    stall: 'A-05',
     file: '',
   })
   const [errors, setErrors] = useState({})
@@ -25,16 +23,16 @@ export default function Register() {
     if (!form.name.trim()) next.name = 'Full name is required'
     if (!form.email.includes('@')) next.email = 'Valid email is required'
     if (form.phone.replace(/\D/g, '').length < 11) next.phone = 'Use an 11-digit PH mobile number'
-    if (!form.file) next.file = 'Upload a government ID or employee credential'
+    if (!form.file) next.file = 'Upload a government ID or vendor credential'
     setErrors(next)
     if (Object.keys(next).length) {
       ping('POST /api/v1/auth/register — validation failed')
       return
     }
     const id = `APP-${1044 + Math.floor(Math.random() * 20)}`
-    setApps((apps) => [{ id, name: form.name, role: form.role, stall: form.role === 'Vendor' ? form.stall : '—', docs: [form.idType], status: 'PENDING' }, ...apps])
-    setSession({ name: form.name, email: form.email, role: form.role, status: 'PENDING', appId: id })
-    ping('Account saved as PENDING. Supervisor has been alerted.')
+    setApps((apps) => [{ id, name: form.name, role: 'Vendor', stall: null, docs: [form.idType], status: 'PENDING', needsStallSelection: false }, ...apps])
+    setSession({ name: form.name, email: form.email, role: 'Vendor', status: 'PENDING', appId: id, stall: null, needsStallSelection: false })
+    ping('Account saved as PENDING. Supervisor has been alerted. You will choose your preferred stall after approval.')
     nav('/pending')
   }
 
@@ -43,21 +41,15 @@ export default function Register() {
       <header className="topbar">
         <Link to="/" className="brand">
           <div className="mark">M</div>
-          <div>Merkado<small>Registration</small></div>
+          <div>Merkado<small>Vendor Registration</small></div>
         </Link>
       </header>
       <div className="hero" style={{ maxWidth: 720 }}>
         <div className="hero-card">
-          <h1>Create an account</h1>
-          <p className="muted">Status starts as PENDING. A market supervisor reviews ID and credentials before login is enabled.</p>
+          <h1>Create a vendor account</h1>
+          <p className="muted">Status starts as PENDING. After supervisor approves your ID and credentials, you can log in and select your preferred stall from the available ones.</p>
+          <span className="chip" style={{ marginBottom: 12 }}>Vendor application</span>
           <form className="form" onSubmit={submit} style={{ marginTop: 18 }}>
-            <label>Role
-              <select value={form.role} onChange={(e) => set('role', e.target.value)}>
-                <option>Vendor</option>
-                <option>Collector</option>
-                <option>Supervisor</option>
-              </select>
-            </label>
             <label>Full name
               <input value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="Juan Dela Cruz" />
               {errors.name && <span className="tiny" style={{ color: 'var(--rose)' }}>{errors.name}</span>}
@@ -72,20 +64,15 @@ export default function Register() {
                 {errors.phone && <span className="tiny" style={{ color: 'var(--rose)' }}>{errors.phone}</span>}
               </label>
             </div>
-            {form.role === 'Vendor' && (
-              <label>Preferred stall
-                <select value={form.stall} onChange={(e) => set('stall', e.target.value)}>
-                  <option>A-05</option>
-                  <option>B-03</option>
-                  <option>C-04</option>
-                </select>
-              </label>
-            )}
+            <div className="card" style={{ padding: 16, background: 'var(--paper)', marginBottom: 0 }}>
+              <p style={{ margin: 0 }}><strong>ℹ️  Stall selection happens after approval</strong></p>
+              <p className="tiny muted" style={{ margin: '6px 0 0' }}>Once your application is approved by a supervisor, you will be able to view the full map of vacant stalls and pick your preferred location (Wet Market, Dry Goods, or Food Court).</p>
+            </div>
             <label>ID / credential type
               <select value={form.idType} onChange={(e) => set('idType', e.target.value)}>
                 <option>National ID</option>
-                <option>Driver’s License</option>
-                <option>Employee ID</option>
+                <option>Driver's License</option>
+                <option>Barangay Clearance</option>
                 <option>NBI Clearance</option>
               </select>
             </label>

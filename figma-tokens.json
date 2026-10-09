@@ -1,0 +1,17 @@
+{
+  "merkado": {
+    "ink": { "value": "#14241c", "type": "color" },
+    "inkSoft": { "value": "#3d5348", "type": "color" },
+    "paper": { "value": "#f4eee3", "type": "color" },
+    "cream": { "value": "#fffaf2", "type": "color" },
+    "forest": { "value": "#164a36", "type": "color" },
+    "forest2": { "value": "#0e3325", "type": "color" },
+    "gold": { "value": "#d4a017", "type": "color" },
+    "clay": { "value": "#c45c32", "type": "color" },
+    "vacant": { "value": "#22a45a", "type": "color" },
+    "occupied": { "value": "#d12b2b", "type": "color" },
+    "reserved": { "value": "#e6b422", "type": "color" },
+    "maintenance": { "value": "#8a8a8a", "type": "color" },
+    "radius": { "value": "18px", "type": "borderRadius" }
+  }
+}

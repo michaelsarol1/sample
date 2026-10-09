@@ -140,16 +140,16 @@ export function NoticeSheet({ notice, onSettle }) {
   )
 }
 
-export function VendorNotices() {
+export function VendorNotices({ vendorName = 'Rosa Dela Cruz' }) {
   const { violations, ping } = useApp()
-  const mine = violations.filter((v) => v.stall === 'A-04' || v.vendor === 'Rosa Dela Cruz')
+  const mine = violations.filter((v) => v.vendor === vendorName || v.vendor === 'Rosa Dela Cruz' || v.vendor === 'You')
   const [id, setId] = useState(mine[0]?.id || '')
   const shown = mine.find((v) => v.id === id) || mine[0]
   return (
     <div className="grid cols-2">
       <div className="card">
         <h2>Your violation notices</h2>
-        {!mine.length && <p className="muted">No penalty notices on stall A-04.</p>}
+        {!mine.length && <p className="muted">No penalty notices yet — you're in good standing.</p>}
         {mine.map((v) => (
           <button key={v.id} className="btn ghost" style={{ width: '100%', marginBottom: 6, textAlign: 'left' }} onClick={() => setId(v.id)}>
             {v.id} · {v.offense} · ₱{v.fine.toLocaleString()} · {v.status}

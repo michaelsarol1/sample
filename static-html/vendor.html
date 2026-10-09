@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vendor Portal — Merkado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-static.css" />
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">M</span>
+    <div><strong style="font-family:Fraunces,serif;font-size:18px">Merkado</strong><small>Vendor Portal</small></div>
+  </a>
+  <div class="top-meta">
+    <span class="chip">Stall A-01 · Fish (Wet Market)</span>
+    <span class="chip">Rosa Dela Cruz</span>
+    <a href="index.html" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.25)">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="nav">
+    <a href="vendor.html" class="active"><strong>Ledger & Billing</strong><span>October statement, receipts</span></a>
+    <a href="#utilities"><strong>Utilities</strong><span>Water & electricity readings</span></a>
+    <a href="#payments"><strong>Payments</strong><span>Settle balance online</span></a>
+    <a href="#contract"><strong>Contract & Profile</strong><span>Lease terms & ID</span></a>
+    <a href="#notices"><strong>Notices</strong><span>From Market Admin</span></a>
+    <a href="#support"><strong>Support</strong><span>Help & contact</span></a>
+  </nav>
+
+  <main class="main">
+    <div class="kpis">
+      <div class="kpi"><div class="label">This Month (Oct)</div><div class="value">₱5,760</div><div class="tiny muted">Rent + Water + Power</div></div>
+      <div class="kpi"><div class="label">Paid</div><div class="value">₱4,500</div><div class="tiny"><span class="badge paid">RENT PAID</span></div></div>
+      <div class="kpi warn"><div class="label">Outstanding Balance</div><div class="value">₱1,260</div><div class="tiny">Water · Electricity due</div></div>
+      <div class="kpi"><div class="label">Due Date</div><div class="value" style="font-size:24px;margin-top:12px">Oct 20, 2026</div><div class="tiny muted">11 days remaining</div></div>
+    </div>
+
+    <div class="grid cols-2">
+      <section class="card" id="ledger">
+        <div class="section-head">
+          <h2>Ledger — October 2026</h2>
+          <span class="badge active">A-01</span>
+        </div>
+
+        <div class="row space"><h3 style="font-size:18px">Billing Period</h3><div class="tiny muted">Oct 01 – Oct 31, 2026</div></div>
+
+        <div class="ledger-row"><div><div class="lbl">Monthly Rent (stall)</div><div class="sub">Stall A-01 · ₱4,500 / month</div></div><div class="amt">₱4,500.00</div></div>
+        <div class="ledger-row"><div><div class="lbl">Water Bill</div><div class="sub">12.8 m³ used · ₱45 / m³</div></div><div class="amt">₱576.00</div></div>
+        <div class="ledger-row"><div><div class="lbl">Electricity</div><div class="sub">57 kWh used · ₱12 / kWh</div></div><div class="amt">₱684.00</div></div>
+        <div class="ledger-row grand"><div>TOTAL AMOUNT DUE</div><div class="amt">₱5,760.00</div></div>
+
+        <div class="divider"></div>
+
+        <h3 style="font-size:18px;margin-bottom:8px">Outstanding Balances</h3>
+        <div class="pm-list" style="gap:8px">
+          <div class="pm"><div><div class="name">Monthly Rent</div><div class="hint">Oct 2026</div></div><strong style="color:#164a36;font-weight:700">PAID · ₱4,500</strong></div>
+          <div class="pm"><div><div class="name">Water</div><div class="hint">₱576 · 12.8 m³</div></div><strong style="color:#b42318;font-weight:700">UNPAID</strong></div>
+          <div class="pm"><div><div class="name">Electricity</div><div class="hint">₱684 · 57 kWh</div></div><strong style="color:#b42318;font-weight:700">UNPAID</strong></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="font-size:18px;margin-bottom:8px">Recent Ledger Entries</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Ref</th><th>Description</th><th class="num">Debit</th><th class="num">Credit</th><th class="num">Balance</th></tr></thead>
+            <tbody>
+              <tr><td>Oct 01</td><td>LED-001</td><td>Monthly rent (Oct 2026)</td><td class="num">₱4,500</td><td class="num"></td><td class="num">₱4,500</td></tr>
+              <tr><td>Oct 01</td><td>LED-003</td><td>Water bill (12.8 m³)</td><td class="num">₱576</td><td class="num"></td><td class="num">₱5,076</td></tr>
+              <tr><td>Oct 01</td><td>LED-005</td><td>Electricity (57 kWh)</td><td class="num">₱684</td><td class="num"></td><td class="num">₱5,760</td></tr>
+              <tr><td>Oct 05</td><td>PMT-001</td><td>Rent payment — Cash (M. Reyes)</td><td class="num"></td><td class="num">₱4,500</td><td class="num">₱1,260</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="utilities">
+        <div class="section-head">
+          <h2>Utilities</h2>
+          <div class="row"><span class="chip" style="background:#efe6d4;color:#14241c">Read date: Sep 30</span></div>
+        </div>
+
+        <div class="stack">
+          <div class="card" style="padding:16px;box-shadow:none;border:1px solid var(--line)">
+            <div class="row space" style="margin-bottom:10px"><strong style="font-family:Fraunces,serif;font-size:18px">Water</strong><span class="badge unpaid">UNPAID</span></div>
+            <div class="row space tiny muted"><span>Previous: 148.2 m³</span><span>Current: 161.0 m³</span></div>
+            <div style="margin:10px 0" class="meter-bar"><div class="fill water" style="width:55%"></div></div>
+            <div class="row space"><div><strong>Used: 12.8 m³</strong><span class="muted tiny"> · ₱45 / m³</span></div><strong style="font-family:Fraunces,serif;font-size:22px">₱576</strong></div>
+          </div>
+
+          <div class="card" style="padding:16px;box-shadow:none;border:1px solid var(--line)">
+            <div class="row space" style="margin-bottom:10px"><strong style="font-family:Fraunces,serif;font-size:18px">Electricity</strong><span class="badge unpaid">UNPAID</span></div>
+            <div class="row space tiny muted"><span>Previous: 3,204 kWh</span><span>Current: 3,261 kWh</span></div>
+            <div style="margin:10px 0" class="meter-bar"><div class="fill power" style="width:42%"></div></div>
+            <div class="row space"><div><strong>Used: 57 kWh</strong><span class="muted tiny"> · ₱12 / kWh</span></div><strong style="font-family:Fraunces,serif;font-size:22px">₱684</strong></div>
+          </div>
+
+          <div class="divider" style="margin:2px 0"></div>
+
+          <h3 style="font-size:18px" id="payments">Settle Payment</h3>
+          <p class="muted tiny">Pick items to pay, then choose a payment method below.</p>
+
+          <div class="pm-list">
+            <div class="pm"><div><div class="name">Water</div><div class="hint">12.8 m³ · ₱576</div></div><span class="badge unpaid">UNPAID · ₱576</span></div>
+            <div class="pm"><div><div class="name">Electricity</div><div class="hint">57 kWh · ₱684</div></div><span class="badge unpaid">UNPAID · ₱684</span></div>
+            <div class="pm" style="background:var(--mint);border-color:var(--leaf)"><div><div class="name">Full Settlement</div><div class="hint">Water + Electricity</div></div><strong style="font-family:Fraunces,serif;font-size:22px;color:#0e3325">₱1,260</strong></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="pay-methods">
+        <div class="section-head"><h2>Payment Methods</h2><span class="badge active">Online & On-site</span></div>
+        <div class="pm-list">
+          <a href="#" class="pm" style="text-decoration:none">
+            <div><div class="name">Bank Transfer</div><div class="hint">BDO · BPI · Landbank · PNB (over-the-counter or online)</div></div>
+            <strong class="btn primary" style="padding:8px 12px">Pay</strong>
+          </a>
+          <a href="#" class="pm" style="text-decoration:none">
+            <div><div class="name">GCash</div><div class="hint">Scan merchant QR or send to 0917-MERKADO</div></div>
+            <strong class="btn primary" style="padding:8px 12px">Pay</strong>
+          </a>
+          <a href="#" class="pm" style="text-decoration:none">
+            <div><div class="name">Maya</div><div class="hint">Scan merchant QR or send to 0919-MERKADO</div></div>
+            <strong class="btn primary" style="padding:8px 12px">Pay</strong>
+          </a>
+          <div class="pm">
+            <div><div class="name">Collector Cash</div><div class="hint">See collector daily 8:00 AM · POS receipt ORC-2026-0421</div></div>
+            <span class="badge reserved">In person</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="contract">
+        <div class="section-head"><h2>Lease Contract</h2><span class="chip" style="background:#efe6d4;color:#14241c">Effective Jan 01, 2026</span></div>
+        <h3 style="font-size:18px;margin-bottom:10px">Vendor</h3>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><th style="width:38%">Stall</th><td>A-01 · Fish (Wet Market)</td></tr>
+              <tr><th>Registered Vendor</th><td>Rosa Dela Cruz</td></tr>
+              <tr><th>Lease Term</th><td>12 months (renewable)</td></tr>
+              <tr><th>Monthly Rent</th><td style="text-align:right;font-family:Fraunces,serif">₱4,500.00</td></tr>
+              <tr><th>Water</th><td style="text-align:right">Per consumption · ₱45 / m³</td></tr>
+              <tr><th>Electricity</th><td style="text-align:right">Per consumption · ₱12 / kWh</td></tr>
+              <tr><th>Total this month</th><td style="text-align:right;font-family:Fraunces,serif;font-weight:700">₱5,760.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="divider"></div>
+        <h3 style="font-size:18px;margin-bottom:8px">Terms & Conditions</h3>
+        <ol style="padding-left:20px;color:var(--ink-soft);line-height:1.6">
+          <li>Monthly rent is due on the 20th of every month; a 2% late fee per month applies after the 25th.</li>
+          <li>Water and electricity are billed monthly based on actual consumption readings taken last day of month.</li>
+          <li>Vendor shall maintain stall cleanliness and comply with the market code of conduct and health regulations.</li>
+          <li>Sub-leasing is prohibited without prior written approval from Market Administration.</li>
+          <li>The market reserves the right to terminate lease for 3 consecutive months of non-payment or violation of rules.</li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="notices">
+        <div class="section-head"><h2>Notices</h2><span class="tiny muted">Updated Oct 09</span></div>
+        <div class="stack">
+          <div class="remit-card">
+            <h4 style="color:var(--forest-2)">October Billing Released</h4>
+            <div class="tiny muted">Oct 1 · Office of the Market Supervisor</div>
+            <p style="margin:8px 0 0">Water & electricity readings for September 30 are now posted. Please settle on or before Oct 20 to avoid penalties.</p>
+          </div>
+          <div class="remit-card">
+            <h4 style="color:var(--clay)">Weekend Cleaning Schedule</h4>
+            <div class="tiny muted">Oct 8 · Admin</div>
+            <p style="margin:8px 0 0">A-Section drain cleaning on Saturday Oct 11, 6 PM – 10 PM. Cover merchandise. Fish vendors A-01 to A-04 assigned.</p>
+          </div>
+          <div class="remit-card">
+            <h4 style="color:var(--forest-2)">Renewal Reminder — 90 days</h4>
+            <div class="tiny muted">Oct 1 · Admin</div>
+            <p style="margin:8px 0 0">Your lease ends Dec 31, 2026. Renewal window opens Nov 01. Secure clearance first.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="support">
+        <div class="section-head"><h2>Support & Documents</h2></div>
+        <div class="pm-list">
+          <div class="pm"><div><div class="name">Official Receipts</div><div class="hint">ORC-2026-0421 · ORC-2026-0398</div></div><a href="#" class="btn ghost">View</a></div>
+          <div class="pm"><div><div class="name">Business Permit</div><div class="hint">BP-2026-00127 · Valid until Dec 31</div></div><a href="#" class="btn ghost">Download</a></div>
+          <div class="pm"><div><div class="name">Contact Collector</div><div class="hint">M. Reyes · 0917-555-0143</div></div><a href="#" class="btn ghost">Call</a></div>
+          <div class="pm"><div><div class="name">Market Admin</div><div class="hint">Office A · 8 AM – 5 PM</div></div><a href="#" class="btn ghost">Message</a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

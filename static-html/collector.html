@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Collector POS — Merkado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-static.css" />
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">M</span>
+    <div><strong style="font-family:Fraunces,serif;font-size:18px">Merkado</strong><small>Collector POS</small></div>
+  </a>
+  <div class="top-meta">
+    <span class="chip">Collector: M. Reyes</span>
+    <span class="chip">Today · Oct 09</span>
+    <span class="chip" style="background:var(--mint);color:var(--forest)">Shift: On</span>
+    <a href="index.html" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.25)">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="nav">
+    <a href="collector.html" class="active"><strong>POS Collections</strong><span>Rent, water, electricity</span></a>
+    <a href="#receipt"><strong>Receipt Preview</strong><span>Print & SMS copy</span></a>
+    <a href="#matrix"><strong>Utilities Matrix</strong><span>All stalls · paid status</span></a>
+    <a href="#remit"><strong>Daily Remittance</strong><span>Cash, bank, e-Wallet</span></a>
+    <a href="#paymodes"><strong>Payment Modes</strong><span>Bank, GCash, Maya, Cash</span></a>
+  </nav>
+
+  <main class="main">
+    <div class="kpis">
+      <div class="kpi"><div class="label">Collected Today</div><div class="value">₱15,760</div><div class="tiny muted">12 transactions</div></div>
+      <div class="kpi"><div class="label">Rent</div><div class="value">₱9,000</div><div class="tiny muted">2 stalls · A-01, A-05</div></div>
+      <div class="kpi"><div class="label">Water + Power</div><div class="value">₱6,760</div><div class="tiny muted">10 utilities settled</div></div>
+      <div class="kpi warn"><div class="label">Outstanding</div><div class="value">₱33,750</div><div class="tiny muted">5 vendors</div></div>
+    </div>
+
+    <div class="grid cols-2">
+      <section class="pos" id="pos">
+        <div class="row space"><h2 style="color:#f8f3e8;font-size:24px">POS Collections</h2><span class="chip" style="color:#f8f3e8">A-01 · Rosa Dela Cruz</span></div>
+        <div class="steps"><span class="step on">1. Stall</span><span class="step on">2. Items</span><span class="step">3. Pay method</span><span class="step">4. Receipt</span></div>
+
+        <div class="pos-tabs">
+          <button class="active">Rent</button>
+          <button>Utilities</button>
+          <button>All</button>
+        </div>
+
+        <div class="pos-items">
+          <div class="pos-item">
+            <div><div class="name">Monthly Rent</div><div class="tiny" style="opacity:.7">A-01 · Stall rental</div></div>
+            <div class="amt">₱4,500</div>
+          </div>
+          <div class="pos-item">
+            <div><div class="name">Water</div><div class="tiny" style="opacity:.7">12.8 m³ · ₱45 / m³</div></div>
+            <div class="amt">₱576</div>
+          </div>
+          <div class="pos-item">
+            <div><div class="name">Electricity</div><div class="tiny" style="opacity:.7">57 kWh · ₱12 / kWh</div></div>
+            <div class="amt">₱684</div>
+          </div>
+          <div class="pos-item" style="background:rgba(215,239,227,.14);border-color:rgba(215,239,227,.3)">
+            <div><div class="name" style="font-weight:700">Full Settlement</div><div class="tiny" style="opacity:.7">Rent + Water + Electricity</div></div>
+            <div class="amt" style="color:#f0d48a">₱5,760</div>
+          </div>
+        </div>
+
+        <div class="paper-card">
+          <div class="row"><strong>Stall / Vendor</strong><span style="font-weight:700">A-01 · Rosa Dela Cruz</span></div>
+          <div class="row"><strong>Item</strong><span style="font-weight:700">Monthly Rent</span></div>
+          <div class="row"><div style="opacity:0"></div><div style="opacity:0"></div></div>
+          <div class="row"><span>Monthly rent (stall)</span><strong style="font-weight:700">₱4,500.00</strong></div>
+          <div class="row"><div style="opacity:0"></div><div style="opacity:0"></div></div>
+          <div class="row total"><span style="font-family:Fraunces,serif;font-size:22px">TOTAL</span><span style="font-family:Fraunces,serif;font-size:28px">₱4,500.00</span></div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="tiny" style="opacity:.72;margin-bottom:8px">TOTAL DUE</div>
+          <div class="amount">₱4,500.00</div>
+        </div>
+
+        <h3 style="color:#f8f3e8;font-size:16px;margin:18px 0 10px">Payment Method</h3>
+        <div class="pos-tabs" style="margin-bottom:14px">
+          <button class="active">Cash</button>
+          <button>Bank</button>
+          <button>GCash</button>
+          <button>Maya</button>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px">
+          <div>
+            <label style="color:#f8f3e8;font-size:12px;opacity:.8">Cash Received</label>
+            <input type="text" value="₱5,000.00" readonly style="width:100%" />
+          </div>
+          <div>
+            <label style="color:#f8f3e8;font-size:12px;opacity:.8">Change</label>
+            <input type="text" value="₱500.00" readonly style="width:100%" />
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:16px">
+          <button class="btn gold lg" style="flex:1">Collect · Post to Ledger</button>
+          <button class="btn ghost lg" style="color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)">Cancel</button>
+        </div>
+      </section>
+
+      <section class="card" id="receipt">
+        <div class="section-head">
+          <h2>Receipt Preview</h2>
+          <div class="row">
+            <button class="btn ghost">Print</button>
+            <button class="btn primary">SMS copy</button>
+          </div>
+        </div>
+        <div class="receipt">
+          <h3>PALENGKE MERKADO</h3>
+          <div class="center tiny muted">OFFICIAL RECEIPT · NON-VAT</div>
+          <div class="center tiny">Address: Public Market, City Proper</div>
+          <div class="center tiny">TIN: 000-123-456-000</div>
+          <hr/>
+          <div class="line"><span>OR No.</span><strong>ORC-2026-0421</strong></div>
+          <div class="line"><span>Date</span><span>Oct 09, 2026 · 10:14 AM</span></div>
+          <div class="line"><span>Stall</span><strong>A-01</strong></div>
+          <div class="line"><span>Vendor</span><span>Rosa Dela Cruz</span></div>
+          <div class="line"><span>Collector</span><span>M. Reyes</span></div>
+          <div class="line"><span>Method</span><span>Cash</span></div>
+          <hr/>
+          <div class="line"><span>Monthly Rent</span><span>₱4,500.00</span></div>
+          <div class="line"><span>Water (12.8 m³)</span><span>₱576.00</span></div>
+          <div class="line"><span>Electricity (57 kWh)</span><span>₱684.00</span></div>
+          <hr/>
+          <div class="line"><strong>TOTAL</strong><strong style="font-family:Fraunces,serif;font-size:17px">₱5,760.00</strong></div>
+          <hr/>
+          <div class="line"><span>Received</span><span>₱5,760.00</span></div>
+          <div class="line"><span>Change</span><span>₱0.00</span></div>
+          <hr/>
+          <div class="center" style="margin-top:10px"><strong>THIS SERVES AS YOUR OFFICIAL RECEIPT</strong></div>
+          <div class="center tiny muted">Thank you for your payment!</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <section class="card" id="matrix">
+      <div class="section-head">
+        <h2>Utilities Collection Matrix</h2>
+        <div class="row">
+          <span class="badge paid">Paid</span>
+          <span class="badge unpaid">Unpaid</span>
+          <span class="badge reserved">Partial</span>
+        </div>
+      </div>
+      <div class="matrix">
+        <div class="cell hd">Stall</div><div class="cell hd">Rent</div><div class="cell hd">Water</div><div class="cell hd">Power</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-01</div><div class="cell paid">PAID</div><div class="cell unpaid">₱576</div><div class="cell unpaid">₱684</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-02</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-03</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell unpaid">₱492</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-04</div><div class="cell paid">PAID</div><div class="cell unpaid">₱576</div><div class="cell paid">PAID</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-05</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-06</div><div class="cell unpaid">₱4,500</div><div class="cell unpaid">₱432</div><div class="cell unpaid">₱348</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">A-07</div><div class="cell partial">--</div><div class="cell partial">--</div><div class="cell partial">--</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">B-01</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">B-02</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell unpaid">₱516</div>
+        <div class="cell" style="background:#fff;border:1px solid var(--line)">C-01</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div><div class="cell paid">PAID</div>
+      </div>
+    </section>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="remit">
+        <div class="section-head">
+          <h2>Daily Remittance · Oct 09</h2>
+          <button class="btn primary lg no-print">Seal remittance</button>
+        </div>
+        <div class="remit-card">
+          <h4>Cash on hand</h4>
+          <div class="row space"><span>12 transactions</span><strong style="font-family:Fraunces,serif;font-size:24px">₱15,760.00</strong></div>
+          <div class="divider"></div>
+          <div class="row space tiny"><span>Physical cash envelope</span><strong>₱11,260</strong></div>
+          <div class="row space tiny"><span>POS cash not yet deposited</span><strong>₱4,500</strong></div>
+        </div>
+        <div class="remit-card">
+          <h4>Bank Transfers</h4>
+          <div class="row space"><span>3 deposits</span><strong style="font-family:Fraunces,serif;font-size:22px">₱9,000.00</strong></div>
+        </div>
+        <div class="remit-card">
+          <h4>e-Wallet</h4>
+          <div class="row space tiny"><span>GCash</span><strong>₱4,200</strong></div>
+          <div class="row space tiny"><span>Maya</span><strong>₱2,360</strong></div>
+        </div>
+        <div class="remit-card">
+          <h4>Official Receipts Issued</h4>
+          <div class="tiny muted">ORC-2026-0410 to ORC-2026-0421 (12)</div>
+          <div class="row space" style="margin-top:8px"><span>ORC-2026-0421 · Rent A-01</span><strong>₱4,500</strong></div>
+          <div class="row space"><span>ORC-2026-0420 · Rent A-05</span><strong>₱4,500</strong></div>
+        </div>
+      </section>
+
+      <section class="card" id="paymodes">
+        <h2>Payment Modes</h2>
+        <p class="muted tiny">Accept settlement through the channels below. Receipt OR numbers auto-issued.</p>
+        <div class="divider"></div>
+        <h3 style="font-size:17px;margin-bottom:10px">Bank Transfer</h3>
+        <div class="stack">
+          <div class="pm"><div><div class="name">BDO</div><div class="hint">Acct 0012-3456-7890</div></div><span class="badge paid">Online</span></div>
+          <div class="pm"><div><div class="name">BPI</div><div class="hint">Acct 9876-5432-1011</div></div><span class="badge paid">Online</span></div>
+          <div class="pm"><div><div class="name">Landbank</div><div class="hint">Acct 1900-1122-3344</div></div><span class="badge paid">Online</span></div>
+        </div>
+        <div class="divider"></div>
+        <h3 style="font-size:17px;margin-bottom:10px">e-Wallet</h3>
+        <div class="stack">
+          <div class="pm"><div><div class="name">GCash Merchant</div><div class="hint">0917-MERKADO</div></div><span class="badge paid">e-Wallet</span></div>
+          <div class="pm"><div><div class="name">Maya Merchant</div><div class="hint">0919-MERKADO</div></div><span class="badge paid">e-Wallet</span></div>
+        </div>
+        <div class="divider"></div>
+        <h3 style="font-size:17px;margin-bottom:10px">Collector Cash</h3>
+        <div class="pm"><div><div class="name">On-site POS collection</div><div class="hint">8:00 AM · M. Reyes (Collector)</div></div><span class="badge reserved">In person</span></div>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

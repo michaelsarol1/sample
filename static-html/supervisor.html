@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Supervisor — Merkado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-static.css" />
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">M</span>
+    <div><strong style="font-family:Fraunces,serif;font-size:18px">Merkado</strong><small>Supervisor Console</small></div>
+  </a>
+  <div class="top-meta">
+    <span class="chip">Market Admin</span>
+    <span class="chip">Oct 09, 2026</span>
+    <a href="index.html" class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.25)">Logout</a>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="nav">
+    <a href="supervisor.html" class="active"><strong>Dashboard</strong><span>KPIs · stall map</span></a>
+    <a href="#onboarding"><strong>Onboarding</strong><span>New vendor registration</span></a>
+    <a href="#leases"><strong>Leases & Vendors</strong><span>All stalls, contracts</span></a>
+    <a href="#utilities"><strong>Utilities</strong><span>Meters · readings</span></a>
+    <a href="#enforcement"><strong>Enforcement</strong><span>Notices · penalties</span></a>
+    <a href="#reports"><strong>Reports</strong><span>Revenue · collections</span></a>
+    <a href="#notices"><strong>Notices</strong><span>Announcements</span></a>
+  </nav>
+
+  <main class="main">
+    <div class="kpis">
+      <div class="kpi"><div class="label">Total Stalls</div><div class="value">32</div><div class="tiny muted">4 sections · 3 market types</div></div>
+      <div class="kpi"><div class="label">Occupancy</div><div class="value">78%</div><div class="tiny"><span class="badge occupied">25 occupied</span> · <span class="badge vacant">5 vacant</span></div></div>
+      <div class="kpi"><div class="label">Revenue (Oct)</div><div class="value">₱120,450</div><div class="tiny muted">Rent · Water · Power</div></div>
+      <div class="kpi warn"><div class="label">Unpaid Balance</div><div class="value">₱33,750</div><div class="tiny muted">5 vendors · 2 delinquent</div></div>
+    </div>
+
+    <section class="card" id="map">
+      <div class="section-head">
+        <h2>Stall Map</h2>
+        <div class="row">
+          <div class="stall-legend">
+            <div class="legend-item"><span class="legend-dot vacant"></span> Vacant</div>
+            <div class="legend-item"><span class="legend-dot occupied"></span> Occupied</div>
+            <div class="legend-item"><span class="legend-dot reserved"></span> Reserved</div>
+            <div class="legend-item"><span class="legend-dot maintenance"></span> Maintenance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stall-section">
+        <h3>Wet Market — Section A</h3>
+        <p class="tiny muted">Fish · Seafood · Meat · Poultry</p>
+        <div class="stall-map">
+          <div class="stall occupied unpaid"><strong>A-01</strong><span>Fish</span><span class="tiny">Rosa D.</span></div>
+          <div class="stall occupied"><strong>A-02</strong><span>Fish</span><span class="tiny">Ben S.</span></div>
+          <div class="stall occupied unpaid"><strong>A-03</strong><span>Seafood</span><span class="tiny">Lina P.</span></div>
+          <div class="stall occupied unpaid"><strong>A-04</strong><span>Seafood</span><span class="tiny">Nora L. · water unpaid</span></div>
+          <div class="stall occupied"><strong>A-05</strong><span>Meat</span><span class="tiny">Mario V.</span></div>
+          <div class="stall occupied unpaid"><strong>A-06</strong><span>Meat</span><span class="tiny">Tessie R. · all unpaid</span></div>
+          <div class="stall maintenance"><strong>A-07</strong><span>Poultry</span><span class="tiny">Repair until Oct 12</span></div>
+          <div class="stall occupied"><strong>A-08</strong><span>Poultry</span><span class="tiny">Jojo F.</span></div>
+          <div class="stall reserved"><strong>A-09</strong><span>Meat</span><span class="tiny">Reserved · pending</span></div>
+          <div class="stall vacant"><strong>A-10</strong><span>Fish</span><span class="tiny">₱4,500/mo</span></div>
+        </div>
+      </div>
+
+      <div class="stall-section">
+        <h3>Dry Goods — Section B</h3>
+        <p class="tiny muted">Clothing · Accessories · Footwear · Houseware</p>
+        <div class="stall-map">
+          <div class="stall occupied"><strong>B-01</strong><span>Clothing</span><span class="tiny">Aling Nena</span></div>
+          <div class="stall occupied unpaid"><strong>B-02</strong><span>Clothing</span><span class="tiny">Edna M. · power unpaid</span></div>
+          <div class="stall occupied"><strong>B-03</strong><span>Accessories</span><span class="tiny">Bingo G.</span></div>
+          <div class="stall maintenance"><strong>B-04</strong><span>Footwear</span><span class="tiny">Roof leak · repair</span></div>
+          <div class="stall occupied"><strong>B-05</strong><span>Footwear</span><span class="tiny">Kiko R.</span></div>
+          <div class="stall vacant"><strong>B-06</strong><span>Houseware</span><span class="tiny">₱3,800/mo</span></div>
+          <div class="stall occupied"><strong>B-07</strong><span>Houseware</span><span class="tiny">Linda Q.</span></div>
+          <div class="stall occupied"><strong>B-08</strong><span>Textiles</span><span class="tiny">Marta C.</span></div>
+          <div class="stall occupied"><strong>B-09</strong><span>Textiles</span><span class="tiny">Hilda B.</span></div>
+          <div class="stall vacant"><strong>B-10</strong><span>Accessories</span><span class="tiny">₱3,500/mo</span></div>
+        </div>
+      </div>
+
+      <div class="stall-section">
+        <h3>Food Court — Section C</h3>
+        <p class="tiny muted">Lunch · Snacks · Drinks</p>
+        <div class="stall-map">
+          <div class="stall occupied"><strong>C-01</strong><span>Lunch</span><span class="tiny">Eatwell</span></div>
+          <div class="stall occupied"><strong>C-02</strong><span>Lunch</span><span class="tiny">Lutong Bahay</span></div>
+          <div class="stall occupied unpaid"><strong>C-03</strong><span>Snacks</span><span class="tiny">Kakanin Co. · delinquent</span></div>
+          <div class="stall occupied"><strong>C-04</strong><span>Snacks</span><span class="tiny">Tindahan ni Aling</span></div>
+          <div class="stall occupied"><strong>C-05</strong><span>Drinks</span><span class="tiny">Juice Bar</span></div>
+          <div class="stall vacant"><strong>C-06</strong><span>Drinks</span><span class="tiny">₱5,000/mo</span></div>
+          <div class="stall vacant"><strong>C-07</strong><span>Lunch</span><span class="tiny">₱5,200/mo</span></div>
+          <div class="stall occupied"><strong>C-08</strong><span>Snacks</span><span class="tiny">Pares Overload</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="onboarding">
+        <div class="section-head"><h2>Onboarding Queue</h2><button class="btn primary">Onboard new</button></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Stall</th><th>Applicant</th><th>Business</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>A-09</td><td>Ramon R.</td><td>Pork Retail</td><td><span class="badge reserved">Pending KYC</span></td><td><a class="btn ghost" style="padding:6px 10px;font-size:12px">Review</a></td></tr>
+              <tr><td>C-07</td><td>Maria L.</td><td>Carinderia</td><td><span class="badge pending">Permit pending</span></td><td><a class="btn ghost" style="padding:6px 10px;font-size:12px">Review</a></td></tr>
+              <tr><td>B-10</td><td>Alberto T.</td><td>Handicrafts</td><td><span class="badge active">Approved</span></td><td><a class="btn gold" style="padding:6px 10px;font-size:12px">Sign lease</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="leases">
+        <div class="section-head"><h2>Leases Summary</h2><a href="#" class="btn ghost">Export</a></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Stall</th><th>Vendor</th><th>Monthly</th><th>Status</th><th>Lease end</th></tr></thead>
+            <tbody>
+              <tr><td>A-01</td><td>Rosa Dela Cruz</td><td class="num">₱4,500</td><td><span class="badge active">Active</span></td><td>Dec 31, 2026</td></tr>
+              <tr><td>A-04</td><td>Nora Lim</td><td class="num">₱4,500</td><td><span class="badge unpaid">Water unpaid</span></td><td>Mar 31, 2027</td></tr>
+              <tr><td>A-06</td><td>Tessie Reyes</td><td class="num">₱4,500</td><td><span class="badge delinquent">Delinquent</span></td><td>Aug 31, 2027</td></tr>
+              <tr><td>B-02</td><td>Edna Matias</td><td class="num">₱3,800</td><td><span class="badge unpaid">Power unpaid</span></td><td>Nov 30, 2026</td></tr>
+              <tr><td>C-03</td><td>Kakanin Co.</td><td class="num">₱5,000</td><td><span class="badge delinquent">2 months</span></td><td>Jun 30, 2027</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="utilities">
+        <div class="section-head"><h2>Utilities — Sep 30 Readings</h2><button class="btn gold">Enter readings</button></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Stall</th><th>Water (m³)</th><th>Bill</th><th>Power (kWh)</th><th>Bill</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>A-01</td><td>12.8</td><td class="num">₱576</td><td>57</td><td class="num">₱684</td><td><span class="badge unpaid">Both unpaid</span></td></tr>
+              <tr><td>A-02</td><td>9.6</td><td class="num">₱432</td><td>41</td><td class="num">₱492</td><td><span class="badge paid">Paid</span></td></tr>
+              <tr><td>A-04</td><td>12.8</td><td class="num">₱576</td><td>45</td><td class="num">₱540</td><td><span class="badge unpaid">Water unpaid</span></td></tr>
+              <tr><td>B-02</td><td>8.2</td><td class="num">₱369</td><td>43</td><td class="num">₱516</td><td><span class="badge unpaid">Power unpaid</span></td></tr>
+              <tr><td>C-03</td><td>18.4</td><td class="num">₱828</td><td>92</td><td class="num">₱1,104</td><td><span class="badge delinquent">Delinquent</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="enforcement">
+        <div class="section-head"><h2>Enforcement & Notices</h2><button class="btn clay">Issue notice</button></div>
+        <div class="remit-card"><h4 style="color:var(--rose)">30-Day Disconnection — A-04</h4><div class="tiny muted">Water unpaid · Issued Oct 09</div><p style="margin:6px 0 0">If not settled by Oct 19, water line will be disconnected and reconnection fee applied.</p></div>
+        <div class="remit-card"><h4 style="color:var(--rose)">Demand Letter — A-06</h4><div class="tiny muted">3 months unpaid · ₱16,000</div><p style="margin:6px 0 0">Hearing schedule: Oct 14, 2:00 PM at Market Admin.</p></div>
+        <div class="remit-card"><h4 style="color:var(--clay)">Final Notice — C-03</h4><div class="tiny muted">2 months unpaid · Lease at risk</div><p style="margin:6px 0 0">Lease may be terminated per contract if unpaid by Oct 25.</p></div>
+      </section>
+    </div>
+
+    <div class="divider" style="margin:22px 0"></div>
+
+    <div class="grid cols-2">
+      <section class="card" id="reports">
+        <div class="section-head"><h2>Revenue Report — October 2026</h2><div class="row"><button class="btn ghost">Month</button><button class="btn ghost">CSV</button></div></div>
+        <div class="kpis" style="grid-template-columns:repeat(3,1fr);margin:10px 0 14px">
+          <div class="kpi" style="padding:14px"><div class="label">Rent</div><div class="value" style="font-size:24px">₱90,500</div></div>
+          <div class="kpi" style="padding:14px"><div class="label">Water</div><div class="value" style="font-size:24px">₱13,700</div></div>
+          <div class="kpi" style="padding:14px"><div class="label">Power</div><div class="value" style="font-size:24px">₱16,250</div></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Section</th><th class="num">Stalls</th><th class="num">Rent</th><th class="num">Water</th><th class="num">Power</th><th class="num">Total</th></tr></thead>
+            <tbody>
+              <tr><td>A (Wet)</td><td class="num">9</td><td class="num">₱38,000</td><td class="num">₱6,200</td><td class="num">₱7,100</td><td class="num" style="font-weight:700">₱51,300</td></tr>
+              <tr><td>B (Dry)</td><td class="num">9</td><td class="num">₱32,500</td><td class="num">₱3,900</td><td class="num">₱4,450</td><td class="num" style="font-weight:700">₱40,850</td></tr>
+              <tr><td>C (Food)</td><td class="num">7</td><td class="num">₱33,500</td><td class="num">₱3,600</td><td class="num">₱4,700</td><td class="num" style="font-weight:700">₱41,800</td></tr>
+              <tr style="background:var(--paper)"><td style="font-weight:700">TOTAL</td><td class="num" style="font-weight:700">25</td><td class="num" style="font-weight:700">₱104,000</td><td class="num" style="font-weight:700">₱13,700</td><td class="num" style="font-weight:700">₱16,250</td><td class="num" style="font-weight:700;font-family:Fraunces,serif;font-size:16px">₱133,950</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="notices">
+        <div class="section-head"><h2>Market Notices</h2><button class="btn primary">New notice</button></div>
+        <div class="remit-card"><h4 style="color:var(--forest-2)">October Billing Released</h4><div class="tiny muted">Oct 1 · Public · 32 stalls</div><p style="margin:6px 0 0">Water & electricity readings for Sep 30 are now posted. Settlement due on or before Oct 20.</p></div>
+        <div class="remit-card"><h4 style="color:var(--forest-2)">Weekend Cleaning — Saturday</h4><div class="tiny muted">Oct 8 · A-Section vendors</div><p style="margin:6px 0 0">Drain cleaning 6:00 PM – 10:00 PM. Cover merchandise. A-01 to A-04 assigned.</p></div>
+        <div class="remit-card"><h4 style="color:var(--clay)">Renewal Window Opens Nov 1</h4><div class="tiny muted">Oct 1 · For leases ending Dec 31</div><p style="margin:6px 0 0">Secure clearance first. Priority given to vendors in good standing (no unpaid balances).</p></div>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>
